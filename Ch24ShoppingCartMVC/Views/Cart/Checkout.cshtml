@@ -1,0 +1,50 @@
+﻿@model Ch24ShoppingCartMVC.Models.CartViewModel
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Checkout</h2>
+
+<div>
+    @if (Model.Cart.Count == 0)
+    {
+        <p>Nothing in your cart yet.</p>
+    }
+    else
+    {
+<table border="1" width="500px">
+    <th><b>Product</b></th>
+    <th><b>Quantity</b></th>
+    <th><b>Unit Price</b></th>
+    <th><b> Price (Each)</b></th>
+    @foreach (var item in Model.Cart)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.UnitPrice</td>
+            <td>@(item.Quantity * item.UnitPrice)</td>
+        </tr>
+    }
+    <tr>
+        <td colspan="3"><b>Total Cost: </b></td>
+        <td>@ViewData["Total"]</td>
+    </tr>
+    <tr>
+        <td colspan="3"><b>Total Cost with Tax: </b></td>
+        <td>@ViewData["Total with Tax"]</td>
+    </tr>
+    </table>
+    <form>
+        <label>Pament Method: </label>
+        <select name="paymentMethod">
+            <option>Visa</option>
+            <option>Master Card</option>
+            <option>Paypal</option>
+        </select>
+        <br />
+        <label>Shipping Address: </label>
+        <textarea name="shippingAdress"></textarea>
+    </form>
+    }
+</div>

@@ -62,7 +62,7 @@ namespace Ch24ShoppingCartMVC.Models{
                 else
                 {
                     //Increase the Quantity by the quantity of the added product
-                    model.Cart.Where(x => x.ProductID == id).FirstOrDefault().Quantity += 1;
+                    model.Cart.Where(x => x.ProductID == id).FirstOrDefault().Quantity += model.AddedProduct.Quantity;
                 }    
             }
         }

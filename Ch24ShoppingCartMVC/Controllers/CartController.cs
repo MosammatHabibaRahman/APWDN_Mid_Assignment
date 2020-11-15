@@ -39,5 +39,20 @@ namespace Ch24ShoppingCartMVC.Controllers {
             TempData["model"] = model;
             return RedirectToAction("List", "Cart");
         }
+
+        [HttpGet]
+        public ActionResult Checkout()
+        {
+            CartViewModel itemList = (CartViewModel)TempData["model"];
+            if (itemList == null)
+            {
+                itemList = cart.GetCart();
+            }
+            decimal sum = itemList.Cart.Sum(x => x.Quantity * x.UnitPrice);
+            decimal sumTax = sum + ((decimal)0.05*sum);
+            ViewData["Total"] = sum;
+            ViewData["Total With Tax"] = sumTax;
+            return View(itemList);
+        }
     }
 }

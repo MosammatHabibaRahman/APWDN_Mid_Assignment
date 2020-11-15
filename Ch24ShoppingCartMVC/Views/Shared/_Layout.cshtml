@@ -16,15 +16,16 @@
         <nav>
             <ul id="menu">
                 @*IMPLEMENT THE LINK Home, Order, Cart and ConctactUs
-                Home Action method: Index Controller: Home
-                Order Action method: Index Controller: Order
-                Cart Action method: List Controller: Cart
-                Contact Us Action method: Contact Controller: Home
+        Home Action method: Index Controller: Home
+        Order Action method: Index Controller: Order
+        Cart Action method: List Controller: Cart
+        Contact Us Action method: Contact Controller: Home
                 *@
                 <li>@Html.ActionLink("Home", "Index/", "Home")</li>
                 <li>@Html.ActionLink("Order", "Index/", "Order")</li>
                 <li>@Html.ActionLink("Cart", "Index/", "Cart")</li>
                 <li>@Html.ActionLink("Contact Us", "Contact/", "Home")</li>
+                <li>@Html.ActionLink("Checkout", "Checkout", "Cart")</li>
             </ul>
         </nav>
     </aside>
