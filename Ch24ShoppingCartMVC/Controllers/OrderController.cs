@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ch24ShoppingCartMVC.Models;
-using Ch24ShoppingCartMVC.Models.DataAccess;
 
 namespace Ch24ShoppingCartMVC.Controllers {
     public class OrderController : Controller

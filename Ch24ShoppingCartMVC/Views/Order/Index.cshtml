@@ -11,9 +11,9 @@
 
     <label>Please select a product&nbsp;</label>
     <select id="ddlProducts" name="ddlProducts" class="autoPostBack">
-         @foreach (var item in Model.ProductsList) {
+        @foreach (var item in Model.ProductsList) {
             <option value="@item.Value" selected="@item.Selected">@item.Text</option>
-        }
+         }
     </select>
 </form>
 @using (Html.BeginForm("List", "Cart", FormMethod.Post, new { id = "frmCart" })) {
