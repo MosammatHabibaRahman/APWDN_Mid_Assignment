@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ch24ShoppingCartMVC.Models;
+using Ch24ShoppingCartMVC.Models.DataAccess;
 
 namespace Ch24ShoppingCartMVC.Controllers {
     public class OrderController : Controller
@@ -26,19 +27,19 @@ namespace Ch24ShoppingCartMVC.Controllers {
                 //ASSIGN products to temp data called products
                 TempData["products"] = products;
                 //Redirect to the action method Index of the Order controller with id parameter.
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Order",id);
             }
             else {
                 //get selected product and return in view method
                 //Call the method GetOrderInfo to get an OrderViewModel object called model
-                OrderViewModel ovm = new OrderViewModel();
-                ovm = order.GetOrderInfo(id);
+                OrderViewModel model = new OrderViewModel();
+                model = order.GetOrderInfo(id);
                 //Assign products to ProductsList property of model
-                ovm.ProductsList = products;
+                model.ProductsList = products;
                 //Assign the quantity of the SelectProduct of the model to 1
-                ovm.SelectedProduct.Quantity = 1;
+                model.SelectedProduct.Quantity = 1;
                 //Send the model object to the view.
-                return View(ovm);
+                return View(model);
             }
         }
         [HttpPost] //post back - get selected ddl value and refresh
@@ -47,6 +48,14 @@ namespace Ch24ShoppingCartMVC.Controllers {
             string pID = collection["ddlProducts"];
             //Redirect to the action method index of the Order controller with parameter the id assigned to pID
             return RedirectToAction("Index",pID);
-        } 
+        }
+
+        public ActionResult TestView()
+        {
+            OrderModel or = new OrderModel();
+            ProductViewModel p = new ProductViewModel();
+            p = or.GetSelectedProduct("arm01");
+            return View(p);
+        }
     }
 }

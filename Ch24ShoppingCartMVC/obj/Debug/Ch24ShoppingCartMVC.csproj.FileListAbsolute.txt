@@ -177,3 +177,7 @@ C:\Users\Habiba\Desktop\APWDN\Midterm Assignment\ShoppingCartMVC\Ch24ShoppingCar
 C:\Users\Habiba\Desktop\APWDN\Midterm Assignment\ShoppingCartMVC\Ch24ShoppingCartMVC\bin\System.Web.WebPages.Razor.xml
 C:\Users\Habiba\Desktop\APWDN\Midterm Assignment\ShoppingCartMVC\Ch24ShoppingCartMVC\obj\Debug\Ch24ShoppingCartMVC.csproj.CopyComplete
 C:\Users\Habiba\Desktop\APWDN\Midterm Assignment\ShoppingCartMVC\Ch24ShoppingCartMVC\obj\Debug\Ch24ShoppingCartMVC.pdb
+C:\Users\Habiba\Desktop\APWDN\Midterm Assignment\ShoppingCartMVC\Ch24ShoppingCartMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\Habiba\Desktop\APWDN\Midterm Assignment\ShoppingCartMVC\Ch24ShoppingCartMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Habiba\Desktop\APWDN\Midterm Assignment\ShoppingCartMVC\Ch24ShoppingCartMVC\bin\System.Web.Providers.xml
+C:\Users\Habiba\Desktop\APWDN\Midterm Assignment\ShoppingCartMVC\Ch24ShoppingCartMVC\obj\Debug\Ch24ShoppingCartMVC.csproj.CoreCompileInputs.cache

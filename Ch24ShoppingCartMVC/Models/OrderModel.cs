@@ -69,11 +69,15 @@ namespace Ch24ShoppingCartMVC.Models {
         public ProductViewModel GetSelectedProduct(string id)
         {
             if (this.products == null)
+            {
                 //call the method ConvertToViewModel and pass the method GetProductByIdFromDataStore(id)
                 return this.ConvertToViewModel(GetProductByIdFromDataStore(id));
+            }
             else
+            {
                 //Get the product from the products where ProductID is matched with id (Using Lambda expression)
                 return products.Where(x => x.ProductID == id).FirstOrDefault();
+            }
         }
     }
 }
