@@ -27,7 +27,7 @@ namespace Ch24ShoppingCartMVC.Controllers {
                 //ASSIGN products to temp data called products
                 TempData["products"] = products;
                 //Redirect to the action method Index of the Order controller with id parameter.
-                return RedirectToAction("Index","Order",id);
+                return RedirectToAction("Index", new { id = id });
             }
             else {
                 //get selected product and return in view method
@@ -47,15 +47,7 @@ namespace Ch24ShoppingCartMVC.Controllers {
         {
             string pID = collection["ddlProducts"];
             //Redirect to the action method index of the Order controller with parameter the id assigned to pID
-            return RedirectToAction("Index",pID);
-        }
-
-        public ActionResult TestView()
-        {
-            OrderModel or = new OrderModel();
-            ProductViewModel p = new ProductViewModel();
-            p = or.GetSelectedProduct("arm01");
-            return View(p);
+            return RedirectToAction("Index", new { id = pID });
         }
     }
 }
